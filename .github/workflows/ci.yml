@@ -19,8 +19,8 @@ jobs:
 
       - name: Prepare enviroment
         run: |
-            apt -y update
-            apt -y install wget zip unzip
+            sudo apt -y update
+            sudo apt -y install wget zip unzip
 
       - name: Build
         run: |
