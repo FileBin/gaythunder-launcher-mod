@@ -7,16 +7,20 @@ on:
   pull_request:
     branches: [ "main" ]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    
 jobs:
-  release:
+  # This workflow contains a single job called "build"
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - name: Prepare enviroment
         run: |
-            apt-get -y update
-            apt-get -y install wget zip unzip
+            apt -y update
+            apt -y install wget zip unzip
 
       - name: Build
         run: |
