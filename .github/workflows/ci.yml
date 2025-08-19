@@ -25,10 +25,14 @@ jobs:
       - name: Build
         run: |
           bash build.sh
+      - name: Unzip Artifact
+        run: |
+          unzip ./out/gaythunder_launcher_mod.zip -d ./gaythunder_launcher_mod
+          
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.6.2
         with:
           # Artifact name
           name: gaythunder_launcher_mod
-          path: ./out/gaythunder_launcher_mod.zip
+          path: ./gaythunder_launcher_mod
